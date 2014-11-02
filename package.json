@@ -1,14 +1,16 @@
 {
-  "name": "agile-token-passer",
   "version": "0.0.1",
+  "private": true,
+  "name": "agile-token-passer",
   "description": "randomized token passer web app for agile daily stand ups",
-  "main": "com.mcmoe/www/index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "mcmoe",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/mcmoe/agile-token-passer.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "agile",
@@ -21,8 +23,6 @@
     "web",
     "app"
   ],
-  "author": "mcmoe",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mcmoe/agile-token-passer/issues"
   },
@@ -30,5 +30,9 @@
   "dependencies": {
     "express": "^4.10.1",
     "http-server": "^0.7.2"
+  },
+  "engines": {
+    "node": "0.10.33",
+    "npm": "1.4.28"
   }
 }
