@@ -28,8 +28,7 @@
   },
   "homepage": "https://github.com/mcmoe/agile-token-passer",
   "dependencies": {
-    "express": "^4.10.1",
-    "http-server": "^0.7.2"
+    "express": "^4.10.1"
   },
   "engines": {
     "node": "0.10.33",

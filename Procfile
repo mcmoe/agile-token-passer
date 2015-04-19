@@ -1,1 +1,1 @@
-web: node node_modules/http-server/bin/http-server www -p $PORT
+web: node app.js

@@ -24,6 +24,13 @@
           <ul class="nav navbar-nav">
             <li><a href="http://blog.mcmoe.com/">Blog</a></li>
           </ul>
+          <form class="navbar-form navbar-right" role="sign-in">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="User">
+              <input type="password" class="form-control" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+          </form>
         </div>
       </div>
     </nav>
@@ -32,7 +39,7 @@
          <div class="col-lg-12">
            <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3><span class="label">to go</span> <span class="label label-danger pull-right">8</span></h3>
+              <h3><span class="label">to go</span> <span id="num_of_users" class="label label-danger pull-right">?</span></h3>
             </div>
             <div class="panel-body">
             </div>
@@ -56,5 +63,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+  <script src="js/main-page.js"></script>
  </body>
  </html>
