@@ -1,7 +1,14 @@
 .nav-background {
-    background: url(../img/random_grey_variations.png) repeat-x;
+    background: url(../img/castle_black.png) repeat;
+    box-shadow: 0px 0px 10px black;
 }
 
 .body-background {
-    background: url(../img/wood_pattern.png);
+    background: url(../img/wall.png);
+}
+
+@media (max-width: 768px) {
+  .navbar-form input {
+    margin-top: 5px;
+  }
 }
