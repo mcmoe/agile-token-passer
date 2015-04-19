@@ -9,6 +9,8 @@ app.get('/', function(req, res) {
     res.sendFile('www/home.html', {root: __dirname })
 });
 
-var port = 3000;
-app.listen(port);
-console.log("App up and running on port", port);
+
+app.set('port', (process.env.PORT || 3000))
+app.listen(app.get('port'), function() {
+  console.log("App up and running on port", app.get('port'));
+})
