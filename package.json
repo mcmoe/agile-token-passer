@@ -35,8 +35,5 @@
   "bugs": {
     "url": "https://github.com/mcmoe/agile-token-passer/issues"
   },
-  "homepage": "https://github.com/mcmoe/agile-token-passer",
-  "dependencies": {
-    "express": "^4.10.1"
-  }
+  "homepage": "https://github.com/mcmoe/agile-token-passer"
 }
