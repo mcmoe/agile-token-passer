@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .container
+    .row: .col-lg-12
+      .panel(class='panel-primary')
+        .panel-heading
+          h3
+            span.label to go
+            span.label#num_of_users(class='label-danger pull-right') ?
+        .panel-body
+    .panel(class='panel-default'): .panel-body
+      .row
+        .col-lg-12(class='col-xs-12')
+          button.form-control(class='btn-large btn-success')
+            | ST  
+            i.glyphicon(class='glyphicon-time')
+            |  RT
