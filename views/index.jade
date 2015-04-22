@@ -2,17 +2,25 @@ extends layout
 
 block content
   .container
-    .row: .col-lg-12
-      .panel(class='panel-primary')
-        .panel-heading
-          h3
-            span.label to go
-            span.label#num_of_users(class='label-danger pull-right') ?
-        .panel-body
-    .panel(class='panel-default'): .panel-body
-      .row
-        .col-lg-12(class='col-xs-12')
-          button.form-control(class='btn-large btn-success')
-            | ST  
-            i.glyphicon(class='glyphicon-time')
-            |  RT
+    .row: .col-lg-12: .panel
+      input(class="form-control text-center" type='text' placeholder="Choose your name...")
+    .row: .col-lg-12: .panel(class='panel-primary')
+      .panel-heading
+        h3
+          span.label JOIN A DAILY
+      .panel-body
+        .row
+          .col-lg-9(class='col-xs-9')
+            input(class="form-control text-center" type='text' placeholder="Give your stand up a name...")
+          .col-lg-3(class='col-xs-3')
+            button.form-control(class='btn-large btn-warning') 
+              i.glyphicon(class='glyphicon-plus')
+        hr
+        .panel: button.form-control(class='btn-large btn-success')
+          i.glyphicon(class='glyphicon-time')
+          |  RTBI DAILY STANDUP 
+          i.glyphicon(class='glyphicon-time')
+        .panel: button.form-control(class='btn-large btn-success')
+          i.glyphicon(class='glyphicon-time')
+          |  IMDB DAILY STANDUP 
+          i.glyphicon(class='glyphicon-time')
