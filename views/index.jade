@@ -2,8 +2,12 @@ extends layout
 
 block content
   .container
-    .row: .col-lg-12: .panel
-      input(class="form-control text-center" type='text' placeholder="Choose your name...")
+    .row
+      .col-lg-9: .panel
+        input(class="form-control text-center" type='text' placeholder="Choose your name...")
+      .col-lg-3: .panel
+        button.form-control(class='btn-large btn-warning')
+          i.glyphicon(class='glyphicon-ok-sign')
     .row: .col-lg-12: .panel(class='panel-primary')
       .panel-heading
         h3
