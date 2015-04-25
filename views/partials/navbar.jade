@@ -1,0 +1,15 @@
+nav.navbar(class='navbar-default nav-background')
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-agile')
+        span.sr-only Toggle navigation
+        each val in [1,2,3]
+          span.icon-bar
+      a.navbar-brand Agile Apps
+    .collapse(class='navbar-collapse navbar-agile')
+      ul(class='nav navbar-nav'): li: a(href='http://blog.mcmoe.com/') Blog
+      form.navbar-form(class='navbar-right', role='sign-in')
+        .form-group
+          input.form-control(type='text', placeholder='User')
+          input.form-control(type='password', placeholder='Password')
+        button.btn(type='submit', class='btn-primary') Sign In

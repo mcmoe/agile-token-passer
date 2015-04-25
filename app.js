@@ -22,14 +22,34 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// setup session configuration
 app.use(session({
   secret: 'if you use this code - change it!',
   resave: false,
   saveUninitialized: true
 }));
 
+
+// allow access to the session variable in views
+app.use(function(req,res,next){
+    res.locals.session = req.session;
+    next();
+});
+
+
+// declare the routes to use
 app.use('/', routes);
 app.use('/users', users);
+
+// provide isAjax variable for Jade templates
+app.use(function(req, res, next){
+  console.log(req.headers)
+  res.locals.isAjax =
+    req.headers['x-requested-with'] &&
+    req.headers['x-requested-with'] === 'XMLHttpRequest';
+  next();
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

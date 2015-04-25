@@ -1,0 +1,10 @@
+if nickname
+  .col-lg-12
+    label.label-info(class="form-control text-center") Hola! #{session.nickname}
+else
+  form#nickname-form
+    .col-lg-9: .panel
+      input#nickname(class="form-control text-center" type='text' placeholder="Choose your name...")
+    .col-lg-3: .panel
+      button#nickname-button.form-control(class='btn-large btn-warning')
+        i.glyphicon(class='glyphicon-ok-sign')

@@ -11,4 +11,11 @@ router.get('/daily', function(req, res, next) {
   res.render('daily', { title: 'agile | daily standups' })
 });
 
+/* POST greeting partial. */
+router.post('/greeting', function(req, res, next) {
+  req.session.nickname = req.body.nickname;
+  res.render('partials/greeting', { nickname: req.session.nickname, layout: false})
+});
+
+
 module.exports = router;

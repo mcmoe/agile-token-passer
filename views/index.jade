@@ -2,12 +2,8 @@ extends layout
 
 block content
   .container
-    .row
-      .col-lg-9: .panel
-        input(class="form-control text-center" type='text' placeholder="Choose your name...")
-      .col-lg-3: .panel
-        button.form-control(class='btn-large btn-warning')
-          i.glyphicon(class='glyphicon-ok-sign')
+    .row#nickname-row
+      include partials/greeting
     .row: .col-lg-12: .panel(class='panel-primary')
       .panel-heading
         h3
@@ -28,3 +24,6 @@ block content
           i.glyphicon(class='glyphicon-time')
           |  IMDB DAILY STANDUP 
           i.glyphicon(class='glyphicon-time')
+
+block extra scripts
+  script(src='/javascripts/async.js')
