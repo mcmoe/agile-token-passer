@@ -14,7 +14,7 @@ router.get('/daily', function(req, res, next) {
 /* POST greeting partial. */
 router.post('/greeting', function(req, res, next) {
   req.session.nickname = req.body.nickname;
-  res.render('partials/greeting', { nickname: req.session.nickname, layout: false})
+  res.render('partials/greeting')
 });
 
 
