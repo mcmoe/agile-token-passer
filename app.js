@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+FirebaseStore = require('connect-firebase')(session);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -24,11 +25,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // setup session configuration
-app.use(session({
+var sessionOptions = {
   secret: 'if you use this code - change it!',
   resave: false,
   saveUninitialized: true
-}));
+};
+
+console.log("FIREHOST:", process.env.FIREHOST);
+if(process.env.FIREHOST) {
+  var options = {
+    host: process.env.FIREHOST,
+    //token: process.env.FIRETOKEN,
+    reapInterval: 604800000 // 1 week in ms
+  };
+  sessionOptions['store'] = new FirebaseStore(options);
+}
+app.use(session(sessionOptions));
 
 
 // allow access to the session variable in views
