@@ -23,7 +23,8 @@
     "serve-favicon": "~2.2.0",
     "express-session": "~1.11.1",
     "zombie": "3.x.x",
-    "jasmine": "~2.2.1"
+    "jasmine": "~2.2.1",
+    "connect-firebase" : "~0.0.7"
   },
   "keywords": [
     "agile",
