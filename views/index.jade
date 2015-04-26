@@ -9,21 +9,12 @@ block content
         h3
           span.label JOIN A DAILY
       .panel-body
-        .row
-          .col-lg-9(class='col-xs-9')
-            input(class="form-control text-center" type='text' placeholder="Give your stand up a name...")
-          .col-lg-3(class='col-xs-3')
-            button.form-control(class='btn-large btn-warning') 
-              i.glyphicon(class='glyphicon-plus')
+        include partials/daily_new
         hr
-        .panel: button.form-control(class='btn-large btn-success')
-          i.glyphicon(class='glyphicon-time')
-          |  RTBI DAILY STANDUP 
-          i.glyphicon(class='glyphicon-time')
-        .panel: button.form-control(class='btn-large btn-success')
-          i.glyphicon(class='glyphicon-time')
-          |  IMDB DAILY STANDUP 
-          i.glyphicon(class='glyphicon-time')
-
+        #dailies
+          /* TODO - read a list of dailies
+          * and for each
+          * include a daily_info partial
+          */
 block extra scripts
   script(src='/javascripts/main.js')

@@ -29,6 +29,20 @@ describe('Displaying the main page', function(){
       browser.assert.element('#nickname-row label.label-info');
       browser.assert.text('#nickname-row label.label-info', 'Hola! jasmine');
     });
-});
+  });
+
+  describe('and adding a new daily', function(){
+
+    beforeEach(function(done){
+      browser
+        .fill('#daily-name', 'RTBI Daily Standup')
+        .pressButton('#daily-button', done);
+    });
+
+    it('should display the added daily\'s info as a button', function(){
+      browser.assert.elements('#dailies div.panel button', 1);
+      browser.assert.text('#dailies div.panel button', 'RTBI Daily Standup');
+    });
+  });
 
 });

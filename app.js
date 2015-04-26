@@ -9,6 +9,7 @@ FirebaseStore = require('connect-firebase')(session);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var dailies = require('./routes/dailies');
 
 var app = express();
 
@@ -53,6 +54,7 @@ app.use(function(req,res,next){
 // declare the routes to use
 app.use('/', routes);
 app.use('/users', users);
+app.use('/dailies', dailies);
 
 // provide isAjax variable for Jade templates
 app.use(function(req, res, next){
