@@ -19,7 +19,6 @@ describe('Displaying the main page', function(){
   });
 
   describe('and choosing your name', function(){
-
     beforeEach(function(done){
       browser
         .fill('#nickname', 'jasmine')
@@ -41,21 +40,33 @@ describe('Displaying the main page', function(){
         .pressButton('#daily-add-button', done);
     });
 
-    it('should display the added daily\'s info as a button', function(){
-      browser.assert.elements('button.daily-join', 1);
-      browser.assert.text('button.daily-join', 'RTBI Daily Standup');
+    it('should display the added daily\'s info as a link', function(){
+      browser.assert.elements('a.daily-join', 1);
+      browser.assert.text('a.daily-join', 'RTBI Daily Standup');
     });
 
     describe('then removing it', function() {
-        beforeEach(function(done){
-          browser.pressButton('.daily-delete[name="RTBI Daily Standup"]', done);
-        });
+      beforeEach(function(done){
+        browser.pressButton('.daily-delete[name="RTBI Daily Standup"]', done);
+      });
 
-        it('should remove the daily\'s info and delete button', function(){
-          browser.assert.elements('.daily-info', 0);
-          browser.assert.elements('.daily-delete', 0);
-        });
-    })
+      it('should remove the daily\'s info and delete button', function(){
+        browser.assert.elements('.daily-info', 0);
+        browser.assert.elements('.daily-delete', 0);
+      });
+    });
+
+    describe('and then clicking it', function() {
+      beforeEach(function(done) {
+        browser.clickLink(browser.text('.daily-join'), done);
+      });
+
+      it('should open up its dailies page', function() {
+        console.log('checking for dalies page!');
+        browser.assert.url('/dailies/RTBI Daily Standup');
+      });
+    });
+
   });
 
 });

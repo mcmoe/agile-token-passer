@@ -1,6 +1,6 @@
 .row: .panel
   .col-lg-11(class='col-xs-9')
-    button.form-control(class='daily-join btn-large btn-success')
+    a.form-control(href="/dailies/#{daily_name}" class='daily-join btn-large btn-success text-center')
       |  #{daily_name}
   .col-lg-1(class='col-xs-3')
     button.form-control(class='daily-delete btn-large btn-danger', name="#{daily_name}")
