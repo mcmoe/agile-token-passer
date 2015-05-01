@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "name": "agile-token-passer",
   "description": "randomized token passer web app for agile daily stand ups",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "test": "NODE_ENV=test PORT=9999 DEBUG=agile-token-passer:* node_modules/.bin/jasmine"
+    "test": "NODE_ENV=test PORT=9999 DEBUG=agile-token-passer:*,zombie node_modules/.bin/jasmine"
   },
   "dependencies": {
     "body-parser": "~1.12.0",
@@ -24,7 +24,8 @@
     "express-session": "~1.11.1",
     "zombie": "3.x.x",
     "jasmine": "~2.2.1",
-    "connect-firebase" : "~0.0.7"
+    "connect-firebase" : "~0.0.7",
+    "firebase" : "~2.2.4"
   },
   "keywords": [
     "agile",

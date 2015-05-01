@@ -1,11 +1,13 @@
 const Zombie = require('zombie');
+Zombie.waitDuration = "30s";
+
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
 
 describe('Displaying the main page', function(){
   var browser;
 
   beforeEach(function(done){
     browser = new Zombie();
-
     browser.visit('/', done);
   });
 
@@ -26,8 +28,8 @@ describe('Displaying the main page', function(){
 
     it('should greet you with your chosen name', function(){
       browser.assert.elements('#nickname', 0);
-      browser.assert.element('#nickname-row label.label-info');
-      browser.assert.text('#nickname-row label.label-info', 'Hola! jasmine');
+      browser.assert.element('#nickname-row span.label.label-default');
+      browser.assert.text('#nickname-row span.label.label-default', 'Hola! jasmine');
     });
   });
 
@@ -36,13 +38,24 @@ describe('Displaying the main page', function(){
     beforeEach(function(done){
       browser
         .fill('#daily-name', 'RTBI Daily Standup')
-        .pressButton('#daily-button', done);
+        .pressButton('#daily-add-button', done);
     });
 
     it('should display the added daily\'s info as a button', function(){
-      browser.assert.elements('#dailies div.panel button', 1);
-      browser.assert.text('#dailies div.panel button', 'RTBI Daily Standup');
+      browser.assert.elements('button.daily-join', 1);
+      browser.assert.text('button.daily-join', 'RTBI Daily Standup');
     });
+
+    describe('then removing it', function() {
+        beforeEach(function(done){
+          browser.pressButton('.daily-delete[name="RTBI Daily Standup"]', done);
+        });
+
+        it('should remove the daily\'s info and delete button', function(){
+          browser.assert.elements('.daily-info', 0);
+          browser.assert.elements('.daily-delete', 0);
+        });
+    })
   });
 
 });

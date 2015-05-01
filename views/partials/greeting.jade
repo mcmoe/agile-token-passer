@@ -1,7 +1,7 @@
 - var nickname = session.nickname
 if nickname
   .col-lg-12
-    label.label-info(class="form-control text-center") Hola! #{nickname}
+    h3: span.label(class="label-default text-center") Hola! #{nickname}
 else
   form#nickname-form
     .col-lg-9: .panel
