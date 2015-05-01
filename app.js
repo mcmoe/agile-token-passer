@@ -24,20 +24,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-// setup session configuration
+/* setup session configuration */
+var expiry = 1 * 7 * 24 * 60 * 60 * 1000 // one week
 var sessionOptions = {
   secret: 'if you use this code - change it!',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: { maxAge: expiry }
 };
 
 console.log("FIREHOST:", process.env.FIREHOST);
 if(process.env.FIREHOST) {
   var options = {
     host: process.env.FIREHOST,
-    //token: process.env.FIRETOKEN,
-    reapInterval: 604800000 // 1 week in ms
+    //token: process.env.FIRETOKEN
   };
   sessionOptions['store'] = new FirebaseStore(options);
 }
