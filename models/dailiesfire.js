@@ -14,7 +14,7 @@ exports.list = function(callback) {
     result = snapshot.val() !== null ? snapshot.val() : {};
     callback(result);
   });
-}
+};
 
 /**
 * Create a new daily only if it does not exist
@@ -36,7 +36,7 @@ exports.new = function(label, callback) {
       });
     }
   });
-}
+};
 
 /**
 * Delete the daily matching the given label
@@ -52,6 +52,6 @@ exports.delete = function(label, callback) {
       callback(new Error(label + " does not exist!"));
     }
   });
-}
+};
 
-module.exports = exports
+module.exports = exports;

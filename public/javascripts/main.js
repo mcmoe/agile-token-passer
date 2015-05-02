@@ -9,7 +9,7 @@ function alertPanel(status, errorThrown, message) {
         "<span aria-hidden=\"true\">&times;</span>" +
       "</button>"+
       status + ":" + errorThrown + "> " + message +
-    "</div>"
+    "</div>";
 }
 
 /**
