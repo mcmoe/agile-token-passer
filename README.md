@@ -5,21 +5,32 @@ Web interface providing an automatic token passer for daily stand up meetings.
 
 ## Launch the server
 You will need to have Node.js installed.  
-From a terminal window, launch `npm start`  
+The app runs on a firebase backend, so you will have to provide your own instance.  
+From a terminal window, set the FIREHOST environment variable `set FIREHOST=xxx.firebaseio.com`  
+Then launch `npm start`  
 You can then open the app via a browser on port 3000.  
-If you want to provide your own port, set it as an environment variable (see below).  
+You can also provide your own port via an environment variable (see below).  
 
 ## Launch the server in Debug mode
 You might want to get available debug info output to the command line.  
-launch the app using `npm run debug` instead.
+To do so, launch the app using `npm run debug` instead.
 
-## Launch the tests
+## Launch the tests (BDD)
 These consist of acceptance testing.
 As features are requested, their behavior should be tested first.  
 The current setup uses Jasmine as a suite and runner and Zombie as a headless browser stack.  
+For now, you must provide a firebase instance.   Use a separate instance than the one of the app.   For example `xxx-test.firebaseio.com`  
 To run the tests launch `npm test`  
+**TODO** - mock the firebase backend
+
+## Launch the tests (TDD)
+**TODO**  
 
 ## Provide your own port
 You might want to run the app on a different port than the default 3000.  
 To do so, set the environment variable PORT to your liking.  
 From a bash terminal, you can do that by typing `export PORT=1234`.  
+
+## Deploy on Heroku ##
+You can deploy the app to heroku by simply pushing the repo to your Heroku app location.  
+A procfile has been provided to tell Heroku to launch `npm start`
