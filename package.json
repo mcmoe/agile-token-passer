@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "test": "NODE_ENV=test PORT=9999 DEBUG=agile-token-passer:*,zombie node_modules/.bin/jasmine"
+    "test": "NODE_ENV=test PORT=9999 DEBUG=agile-token-passer:*,zombie node_modules/.bin/jasmine",
+    "debug": "DEBUG=agile-token-passer:* npm start"
   },
   "dependencies": {
     "body-parser": "~1.12.0",
