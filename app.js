@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /* setup session configuration */
-var expiry = 1 * 7 * 24 * 60 * 60 * 1000 // one week
+var expiry = 1 * 7 * 24 * 60 * 60 * 1000; // one week
 var sessionOptions = {
   secret: 'if you use this code - change it!',
   resave: false,
@@ -39,7 +39,7 @@ if(process.env.FIREHOST) {
     host: process.env.FIREHOST,
     //token: process.env.FIRETOKEN
   };
-  sessionOptions['store'] = new FirebaseStore(options);
+  sessionOptions.store = new FirebaseStore(options);
 }
 app.use(session(sessionOptions));
 
@@ -58,7 +58,7 @@ app.use('/dailies', dailies);
 
 // provide isAjax variable for Jade templates
 app.use(function(req, res, next){
-  console.log(req.headers)
+  console.log(req.headers);
   res.locals.isAjax =
     req.headers['x-requested-with'] &&
     req.headers['x-requested-with'] === 'XMLHttpRequest';
