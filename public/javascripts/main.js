@@ -39,6 +39,7 @@ $(document).ready(function(){
             data: { daily_name: $("#daily-name").val() },
             success:function(result) {
               $("#dailies").append(result);
+              $("#daily-name").val('');
             },
             error:function(jqXHR, textStatus, errorThrown) {
               $("#dailies").before(alertPanel(textStatus, errorThrown, jqXHR.responseText));
