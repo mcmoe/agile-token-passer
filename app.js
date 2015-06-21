@@ -1,3 +1,4 @@
+var debug = require('debug')('agile-token-passer:app');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,6 +8,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 FirebaseStore = require('connect-firebase')(session);
 
+var config = require('./utils/config');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var dailies = require('./routes/dailies');
@@ -33,10 +35,11 @@ var sessionOptions = {
   cookie: { maxAge: expiry }
 };
 
-console.log("FIREHOST:", process.env.FIREHOST);
-if(process.env.FIREHOST) {
+var firebaseHost = config.firebaseHost();
+debug('FIREHOST:', firebaseHost);
+if(firebaseHost) {
   var options = {
-    host: process.env.FIREHOST,
+    host: firebaseHost,
     //token: process.env.FIRETOKEN
   };
   sessionOptions.store = new FirebaseStore(options);

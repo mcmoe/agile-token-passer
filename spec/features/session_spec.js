@@ -1,7 +1,9 @@
 var Firebase = require("firebase");
-var sessions = new Firebase(process.env.FIREHOST + "/sessions");
+var config = require('../../utils/config');
+var sessions = new Firebase(config.firebaseHost() + "/sessions");
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
 
+/*jshint esnext: true */
 const Zombie = require('zombie');
 
 function clearSessions(done) {

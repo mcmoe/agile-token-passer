@@ -1,8 +1,7 @@
-
-var debug = require('debug')('agile-token-passer:server');
+var debug = require('debug')('agile-token-passer:models');
 var Firebase = require("firebase");
-
-var dailies = new Firebase(process.env.FIREHOST + "/dailies");
+var config = require('../utils/config');
+var dailies = new Firebase(config.firebaseHost() + "/dailies");
 
 /**
 * Lists all dailies in JSON format.
@@ -10,6 +9,7 @@ var dailies = new Firebase(process.env.FIREHOST + "/dailies");
 * to the callback function.
 */
 exports.list = function(callback) {
+  debug("Querying for Dailies list...");
   dailies.once("value", function(snapshot) {
     result = snapshot.val() !== null ? snapshot.val() : {};
     callback(result);
